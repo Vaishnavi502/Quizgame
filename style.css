@@ -2,29 +2,81 @@ body{
     background-color: antiquewhite;
 }
 *{
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Arial', sans-serif;
     margin:0; padding:0;
     box-sizing: border-box;
     outline: none; border:none;
     text-decoration: none;
+    color: black;
 }
 .header{  
-        position: sticky;
-        top:0; left:0; right:0;
-        background-color: var(--white);
-        padding-right: 2rem;
-        padding-top: 2rem;
-        padding-bottom: 2rem;
-        box-shadow: var(--box-shadow);
+    position: sticky;
+    top:0; left:0; right:0;
+    padding-right: 2rem;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    font-size: 20px;
 }
 .header .logo{
     padding-left: 2rem;
     color:var(--black);
  }
-.header .navbar a{
-    padding-right: 2rem;
+.sidenav{
+    width: 0;
+    position: fixed;
+    overflow: hidden;
+    transition: 0.5s;
+    z-index: 1;
+    top: 0;
+    right: 0;
+}
+.sidenav a,.dropdown .drop{
+  padding: 8px;
+  display: block;
+  transition: 0.3s;
+  color: seagreen;
+  border: none;
+  background: none;
+  font-size: 20px;
+  text-transform: capitalize;
+}
+.sidenav a:hover,.dropdown .drop:hover{
+  color: black;
+}
+.sidenav .dropdown .dropdown-container {
+  display: none;
+  padding-left: 8px;
+}
+.sidenav .dropdown:hover .dropdown-container{
+    display: block;
+    /*background-color: white;
+    color: black;*/
+}
+.dropdown-container a:hover{
+    background-color: black;
+    color: white;
+}
+.header span{
     float: right;
 }
-.header .navbar a:hover{
-    color: var(red);
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  margin-left: 50px;
+  font-size: 50px;
+}
+.sidenav .fa-caret-down {
+  float: right;
+  color: seagreen;
+  padding-left: 8px;
+}
+.maintext h1{
+    text-align: center;
+    text-transform: capitalize;
+}
+.maintext h3{
+    padding-left: 2rem;
+    padding-top: 2 rem;
+    text-decoration: underline;
 }
