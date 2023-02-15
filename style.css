@@ -1,8 +1,12 @@
 body{
-    background-color: antiquewhite;
+    background: url(michael-baccin-XopauR-Nagk-unsplash.jpg);
+    background-size: cover;
+    backdrop-filter: blur(8px);
+    height: 600vh;
+    width: 100%;
 }
 *{
-    font-family: 'Arial', sans-serif;
+    font-family: 'Poppins', sans-serif;
     margin:0; padding:0;
     box-sizing: border-box;
     outline: none; border:none;
@@ -16,6 +20,7 @@ body{
     padding-top: 2rem;
     padding-bottom: 2rem;
     font-size: 20px;
+    background-color: antiquewhite;
 }
 .header .logo{
     padding-left: 2rem;
@@ -49,8 +54,6 @@ body{
 }
 .sidenav .dropdown:hover .dropdown-container{
     display: block;
-    /*background-color: white;
-    color: black;*/
 }
 .dropdown-container a:hover{
     background-color: black;
@@ -71,12 +74,86 @@ body{
   color: seagreen;
   padding-left: 8px;
 }
-.maintext h1{
+.maintext .maintext-title{
+    font-size: 25px;
+    padding: 5rem;
     text-align: center;
     text-transform: capitalize;
+    color: antiquewhite;
 }
-.maintext h3{
-    padding-left: 2rem;
-    padding-top: 2 rem;
-    text-decoration: underline;
+.maintext .newpubhead{
+    text-transform: capitalize;
+    padding-left: 8rem;
+    color: yellowgreen;
+    font-size: 20px;
+    border: none;
+    background: none;
+}
+.maintext .newpubhead .fa-caret-right{
+    font-size: 25px;
+    color: antiquewhite;
+    padding-left: 8px;
+    animation: blink 2s steps(5, start) infinite;
+    -webkit-animation: blink 1s steps(5, start) infinite;
+    }
+    @keyframes blink {
+      to {
+        visibility: hidden;
+      }
+    }
+    @-webkit-keyframes blink {
+      to {
+        visibility: hidden;
+      }
+    }
+}
+.newpub .box-container{
+   display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+   gap: 2rem;
+}
+
+.newpub .box-container .box{
+   border:var(--border);
+   box-shadow: var(--box-shadow);
+   background: var(--white);
+}
+
+.newpub .box-container .box:hover .image img{
+   transform: scale(1.1);
+}
+
+.newpub .box-container .box .image{
+   height: 25rem;
+   overflow: hidden;
+}
+
+.newpub .box-container .box .image img{
+   height: 100%;
+   width: 50%;
+   object-fit: contain;
+   transition: .2s linear;
+}
+
+.new/*pub .box-container .box .content{
+   padding:2rem;
+   text-align: center;
+}*/
+
+.newpub .box-container .box .content-title{
+   font-size: 15px;
+   color:white;
+   padding-left: 2rem;
+}
+
+.newpub .box-container .box .content{
+   font-size: 12px;
+   color:white;
+   line-height: 2;
+   padding-left: 2rem;
+}
+
+.newpub .load-more{
+   text-align: center;
+   margin-top: 2rem;
 }
