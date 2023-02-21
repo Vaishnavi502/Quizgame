@@ -37,10 +37,10 @@
         <div class="box-container">
           <div class="box">
             <div class='image'>
-              <img src="nick-morrison-FHnnjk1Yj7Y-unsplash.jpg">
+              <img src="markus-spiske-MI9-PY5cyNs-unsplash.jpg">
             </div>
             <div class="content">
-              <h3>HTML Quiz</h3>
+              <h3>Basic HTML5 Quiz</h3>
               <p>1.No. of questions: 20<br>Type:MCQ<br>Topics:HTML5 basic elements, HTML5 conceptual understanding</p>
             </div>
           </div>
@@ -50,23 +50,33 @@
               <img src="nick-morrison-FHnnjk1Yj7Y-unsplash.jpg">
             </div>
             <div class="content">
-              <h3>HTML Quiz</h3>
-              <p>1.No. of questions: 20<br>Type:MCQ<br>Topics:HTML5 basic elements, HTML5 conceptual understanding</p>
+              <h3>Bootstrap CSS Quiz</h3>
+              <p>1.No. of questions: 15<br>Type:MCQ<br>Topics:Bootstrap CSS usage</p>
             </div>
           </div>
 
           <div class="box">
             <div class='image'>
-              <img src="nick-morrison-FHnnjk1Yj7Y-unsplash.jpg">
+              <img src="taras-shypka-iFSvn82XfGo-unsplash.jpg">
             </div>
             <div class="content">
-              <h3>HTML Quiz</h3>
-              <p>1.No. of questions: 20<br>Type:MCQ<br>Topics:HTML5 basic elements, HTML5 conceptual understanding</p>
+              <h3>Tailwind CSS Quiz</h3>
+              <p>1.No. of questions: 20<br>Type:MCQ<br>Topics:</p>
             </div>
           </div>
 
-          <div class="load-more"><span class="btn">load more</span></div>
+          <div class="box">
+            <div class='image'>
+              <img src="taras-shypka-iFSvn82XfGo-unsplash.jpg">
+            </div>
+            <div class="content">
+              <h3>Tailwind CSS Quiz</h3>
+              <p>1.No. of questions: 20<br>Type:MCQ<br>Topics:</p>
+            </div>
+          </div>
+          
         </div>
+        <div class="load-more"><span class="btn">load more</span></div>
       </section>
     
     </section>
@@ -89,8 +99,14 @@
         scroll();
       }
       function scroll(){
-        document.println(document.getElementById('menu').scrollTop)
-        // document.getElementById('side').scrollTop = ;
+        var sidenav = document.getElementById('side');
+        var sticky=sidenav.offsetTop;
+        if (window.pageYOffset >= sticky) {
+          sidenav.classList.add("sticky");
+        }
+        else {
+          sidenav.classList.remove("sticky");
+        }
       }
   </script>
   </body>
