@@ -32,6 +32,7 @@ body{
     padding-bottom: 2rem;
     font-size: 20px;
     background-color: antiquewhite;
+    z-index: 1;
 }
 .header .logo{
     padding-left: 2rem;
@@ -97,18 +98,16 @@ body{
 }
 .maintext .newpubhead{
     text-transform: capitalize;
-    /* background-clip: content-box; */
     border-color: antiquewhite;
     display: inline-block;
-    /* width: fit-content; */
-    /* width:-webkit-fit-content;
-    width:-moz-fit-content; */
-    padding-left: 8rem;
-    padding-bottom: 2rem;
+    margin-left: 8rem;
+    margin-bottom: 2rem;
     color: yellowgreen;
     font-size: 20px;
-    /* border: none; */
     background: none;
+}
+.maintext .newpubhead:hover{
+    cursor: pointer;
 }
 .maintext .newpubhead .fa-caret-right{
     font-size: 25px;
@@ -152,12 +151,15 @@ body{
 
 .maintext .newpub .box-container .box:hover .image img{
    transform: scale(1.1);
+   overflow: hidden;
+   object-fit: contain;
 }
 
 .maintext .newpub .box-container .box .image{
    height: 100%;
    width: 100%;
    align-content: center;
+   display: inline;
    overflow: hidden;
 }
 
@@ -174,13 +176,13 @@ body{
 }
 
 .maintext .newpub .box-container .box .content h3{
-   display: inline;
+/*   display: inline;*/
    font-size: 1.5rem;
    color:var(--black);
 }
 
 .maintext .newpub .box-container .box .content p{
-   display: inline;
+/*   display: inline;*/
    font-size: 1rem;
    color:var(--light-black);
    line-height: 2;
@@ -191,6 +193,9 @@ body{
    display: block;
    text-align: center;
    margin-top: 2rem;
+   color: var(--light-black);
+   text-transform: capitalize;
+   background-color: antiquewhite;
 }
 
 .sticky {
