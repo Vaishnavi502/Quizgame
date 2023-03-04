@@ -174,11 +174,13 @@ body{
 }
 
 .maintext .newpub .box-container .box .content h3{
+   display: inline;
    font-size: 1.5rem;
    color:var(--black);
 }
 
 .maintext .newpub .box-container .box .content p{
+   display: inline;
    font-size: 1rem;
    color:var(--light-black);
    line-height: 2;
