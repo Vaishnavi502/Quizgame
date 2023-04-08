@@ -189,14 +189,14 @@ body{
    padding:0.5rem;
 }
 
-.maintext .load-more{
+/*.maintext .load-more{
    display: block;
    text-align: center;
    margin-top: 2rem;
    color: var(--light-black);
    text-transform: capitalize;
    background-color: antiquewhite;
-}
+}*/
 
 .sticky {
    position: fixed;
