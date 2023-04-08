@@ -208,3 +208,107 @@ body{
  .sticky + .content {
    padding-right: 60px;
  }
+ .log .container {
+   display: block;
+   position: relative;
+   padding-left: 35px;
+   margin-bottom: 12px;
+   cursor: pointer;
+   font-size: 22px;
+   -webkit-user-select: none;
+   -moz-user-select: none;
+   -ms-user-select: none;
+   user-select: none;
+ }
+ 
+ /* Hide the browser's default radio button */
+ .log .container input {
+   position: absolute;
+   opacity: 0;
+   cursor: pointer;
+ }
+ .log .checkmark {
+   position: absolute;
+   top: 0;
+   left: 0;
+   height: 25px;
+   width: 25px;
+   background-color: #eee;
+   border-radius: 50%;
+ }
+ 
+ /* On mouse-over, add a grey background color */
+ .log .container:hover input ~ .checkmark {
+   background-color: #ccc;
+ }
+ 
+ /* When the radio button is checked, add a blue background */
+ .log .container input:checked ~ .checkmark {
+   background-color: #2196F3;
+ }
+ 
+ /* Create the indicator (the dot/circle - hidden when not checked) */
+ .log .checkmark:after {
+   content: "";
+   position: absolute;
+   display: none;
+ }
+ 
+ /* Show the indicator (dot/circle) when checked */
+ .log .container input:checked ~ .checkmark:after {
+   display: block;
+ }
+ 
+ /* Style the indicator (dot/circle) */
+ .log .container .checkmark:after {
+     top: 9px;
+    left: 9px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: white;
+ }
+ 
+ 
+ 
+ .footer .footer-container{
+   display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+   gap: 3rem;
+}
+
+.footer .footer-container .footer-box h2{
+   color:var(--white);
+   font-size: 2.5rem;
+   padding-bottom: 2rem;
+}
+
+.footer .footer-container .footer-box div{
+   color:var(--light-white);
+   font-size: 1.5rem;
+   padding-bottom: 1.5rem;
+   display: block;
+}
+
+/* .footer .box-container .box a i{
+   color:var(--main-color);
+   padding-right: .5rem;
+   transition: .2s linear;
+}
+
+.footer .box-container .box a:hover i{
+   padding-right: 2rem;
+}
+
+.footer .credit{
+   text-align: center;
+   padding-top: 3rem;
+   margin-top: 3rem;
+   border-top: .1rem solid var(--light-white);
+   font-size: 2rem;
+   color:var(--white);
+}
+
+.footer .credit span{
+   color:var(--main-color);
+}*/
