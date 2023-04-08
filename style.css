@@ -209,7 +209,7 @@ body{
    padding-right: 60px;
  }
  .log .container {
-   display: block;
+   display: inline-block;
    position: relative;
    padding-left: 35px;
    margin-bottom: 12px;
@@ -233,13 +233,13 @@ body{
    left: 0;
    height: 25px;
    width: 25px;
-   background-color: #eee;
+   background-color: white;
    border-radius: 50%;
  }
  
  /* On mouse-over, add a grey background color */
  .log .container:hover input ~ .checkmark {
-   background-color: #ccc;
+   background-color: var(--light-bg);
  }
  
  /* When the radio button is checked, add a blue background */
@@ -256,7 +256,7 @@ body{
  
  /* Show the indicator (dot/circle) when checked */
  .log .container input:checked ~ .checkmark:after {
-   display: block;
+   display: inline-block;
  }
  
  /* Style the indicator (dot/circle) */
@@ -270,23 +270,29 @@ body{
  }
  
  
- 
+
+ /*---------------------------------------------------------------*/
+ .footer #hr{
+    margin: 30px 0 10px 0;
+    color: var(--light-bg);
+ }
  .footer .footer-container{
    display: grid;
    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
-   gap: 3rem;
+   gap: 2rem;
+/*   padding-top: 3rem;*/
 }
 
 .footer .footer-container .footer-box h2{
    color:var(--white);
-   font-size: 2.5rem;
-   padding-bottom: 2rem;
+/*   font-size: 2.5rem;*/
+   padding-bottom: 1rem;
 }
 
 .footer .footer-container .footer-box div{
    color:var(--light-white);
-   font-size: 1.5rem;
-   padding-bottom: 1.5rem;
+/*   font-size: 1.5rem;*/
+   padding-bottom: 0.5rem;
    display: block;
 }
 
