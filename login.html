@@ -15,7 +15,7 @@
     background-image: url("john-schnobrich-2FPjlAyMQTA-unsplash.jpg");
 
     /* Control the height of the image */
-    min-height: 450px;
+    min-height: 600px;
 /*    filter: blur(8px);
     -webkit-filter: blur(8px);*/
     /* Center and scale the image nicely */
@@ -27,8 +27,8 @@
   .login{
     display: inline-block;
     position: absolute;
-    right: 30px;
-    top: 30px;
+    right: 60px;
+    top: 40px;
     margin: 20px;
     max-width: 300px;
     padding: 16px;
@@ -94,45 +94,42 @@
     
     <section class="log">
       <div class="bg-img">
-        <form name="login" class="login">
+        <!-- <form id="lgnopt" class="login" method="post" action="logintofile.php"> -->
+          <form name="lgnopt" class="login">
           <h1 style="padding: 1px 0px 10px 0px">Login</h1>
           <ul class="options">
               <li>
                 <label class="container">Login
-                  <input type="radio" checked="checked" name="radio" id="lgn">
+                  <input type="radio" checked="checked" name="radio" id="lgn" onclick="seelogin();">
                   <span class="checkmark"></span>
                 </label>
               </li>
               <li>
                 <label class="container">Sign up
-                  <input type="radio" name="radio" id="sgnup">
+                  <input type="radio" name="radio" id="sgnup" onclick="seesignup();">
                   <span class="checkmark"></span>
                 </label>
               </li>
           </ul>
+          <div id="login">
+              <label for="user">Username</label>
+              <input type="text" name="user" required>
+              <label for="pass">Password</label>
+              <input type="password" name="pass" required>
+              <button type="submit" class="btn">Login</button>
+          </div>
+          <div id="signup" style="display: none;">
+              <label for="name">Username</label>
+              <input type="text" name="name" required>
+              <label for="email">Email ID</label>
+              <input type="email" name="email" required>
+              <label for="newpass">Create new password</label>
+              <input type="password" name="newpass" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required>
+              <label for="conf">Confirm password</label>
+              <input type="password" name="conf" id="conf" required>
+              <button type="submit" class="btn" onclick="svalidate();">Sign Up</button>
+          </div>
         </form>
-        <div id="login" style="display: none;">
-          <form class="login">
-            <label for="user">Username</label>
-            <input type="text" id="user" required>
-            <label for="pass">Password</label>
-            <input type="text" id="pass" >
-            <button type="submit" class="btn">Login</button>
-          </form>
-        </div>
-        <div id="signup" style="display: none;">
-          <form class="login">
-            <label for="name">Name</label>
-            <input type="text" id="name" required>
-            <label for="email">Email ID</label>
-            <input type="email" id="email" required>
-            <label for="newpass">Create new password</label>
-            <input type="text" id="newpass" required>
-            <label for="conf">Confirm password</label>
-            <input type="text" name="conf" required>
-            <button type="submit" class="btn">Sign Up</button>
-          </form>
-        </div>
       </div>
     </section>
 
@@ -165,9 +162,6 @@
         }
       }
       window.onscroll() = function(){
-        scroll();
-      }
-      function scroll(){
         var sidenav = document.getElementById('side');
         var sticky=sidenav.offsetTop;
         if (window.pageYOffset >= sticky) {
@@ -182,12 +176,31 @@
         document.getElementsByClassName('openbtn')[0].onclick = opennav();
         document.getElementById('side').onclick = opennav();
       }
-      if(document.getElementById("lgn").checked==true)
-      {
+      function seelogin(){
+        document.getElementById("lgn").checked=true;
         document.getElementById("login").style.display="block";
+        document.getElementById("signup").style.display="none";
       }
-      else if(document.getElementById("sgnup").checked==true){
-        document.getElementById("signup").style.display="block";
+
+      function seesignup(){
+        if(document.getElementById("sgnup").checked==true){
+          document.getElementById("login").style.display="none";
+          document.getElementById("signup").style.display="block";
+        }
+      }
+
+      function svalidate(){
+        var newpwd = document.forms['lgnopt']['newpass'].value;
+        var confpwd = document.forms['lgnopt']['conf'].value;
+        if(newpwd != confpwd)
+        {
+          window.alert("Your password does not match");
+          document.getElementById("conf").focus();
+        }
+        else{
+          window.alert("Success! Login to your account");
+          seelogin();
+        }
       }
     </script>
 </body>
