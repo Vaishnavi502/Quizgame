@@ -1,10 +1,10 @@
-<?php
+<? php
 	
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 				
 	function get_data() {
 		$name = $_POST['name'];
-		$file_name='StudentsData'. '.json';
+		$file_name='logindata'. '.json';
 
 		if(file_exists("$file_name")) {
 			$current_data=file_get_contents("$file_name");
@@ -12,7 +12,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 							
 			$extra=array(
 				'Username' => $_POST['user'],
-				'Password' => $_POST['pass']
+				'Password' => $_POST['pass'],
+				'Email' => $_POST['email']
 			);
 			$array_data[]=$extra;
 			echo "file exist<br/>";
@@ -21,9 +22,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 		else {
 			$datae=array();
 			$datae[]=array(
-				'Name' => $_POST['name'],
-				'Branch' => $_POST['branch'],
-				'Year' => $_POST['year'],
+				'Username' => $_POST['user'],
+				'Password' => $_POST['pass'],
+				'Email' => $_POST['email']
 			);
 			echo "file not exist<br/>";
 			return json_encode($datae);
